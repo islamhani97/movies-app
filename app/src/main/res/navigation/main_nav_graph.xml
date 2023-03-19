@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.islam.android.apps.movies.ui.home.HomeFragment"
+        android:label="@string/home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_favouriteFragment"
+            app:destination="@id/favouriteFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_movieDetailsFragment"
+            app:destination="@id/movieDetailsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_loginDialog"
+            app:destination="@id/loginDialog" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.islam.android.apps.movies.ui.search.SearchFragment"
+        android:label="@string/search"
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_searchFragment_to_movieDetailsFragment"
+            app:destination="@id/movieDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/favouriteFragment"
+        android:name="com.islam.android.apps.movies.ui.favourit.FavouriteFragment"
+        android:label="@string/favourite"
+        tools:layout="@layout/fragment_favourite" >
+        <action
+            android:id="@+id/action_favouriteFragment_to_movieDetailsFragment"
+            app:destination="@id/movieDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/movieDetailsFragment"
+        android:name="com.islam.android.apps.movies.ui.moviedatails.MovieDetailsFragment"
+        android:label="{title}"
+        tools:layout="@layout/fragment_movie_details">
+        <argument
+            android:name="movieId"
+            app:argType="integer" />
+        <argument
+            android:name="title"
+            app:argType="string" />
+    </fragment>
+    <dialog
+        android:id="@+id/loginDialog"
+        android:name="com.islam.android.apps.movies.ui.logindialog.LoginDialog"
+        android:label="@string/login"
+        tools:layout="@layout/dialog_login">
+        <action
+            android:id="@+id/action_loginDialog_to_authDialog"
+            app:destination="@id/authDialog" />
+    </dialog>
+    <dialog
+        android:id="@+id/authDialog"
+        android:name="com.islam.android.apps.movies.ui.authdialog.AuthDialog"
+        android:label="@string/auth"
+        tools:layout="@layout/dialog_auth">
+        <action
+            android:id="@+id/action_authDialog_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="requestToken"
+            app:argType="string" />
+    </dialog>
+</navigation>

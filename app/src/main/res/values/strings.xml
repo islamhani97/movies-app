@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Movies</string>
+    <string name="home">Home</string>
+    <string name="search">Search</string>
+    <string name="favourite">Favourite</string>
+    <string name="movie_details">Movie Details</string>
+    <string name="generate_session">Generate session</string>
+    <string name="login">Login</string>
+    <string name="auth">Auth</string>
+    <string name="overview">Overview</string>
+    <string name="message_login">You are not logged in press login button to complete the login process</string>
+    <string name="message_generating_session">You will redirected to the main website to login and confirm the permission to create a session be complete the login process. After confirming the permission press generate session button to be logged in</string>
+</resources>
